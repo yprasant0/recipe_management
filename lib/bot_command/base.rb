@@ -11,8 +11,7 @@ module BotCommand
       @api = ::Telegram::Bot::Api.new(token)
     end
 
-
-    protected
+   protected
 
     def send_message(text)
       @api.call('sendMessage', chat_id: "977240518", text: text)

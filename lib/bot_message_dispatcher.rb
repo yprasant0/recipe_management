@@ -23,8 +23,10 @@ class BotMessageDispatcher
 
     if !@message.nil? && @texted.split.first.downcase == "in"
       detail=Detail.new
+      $k.slice! /^\S+\s+/
       detail.name = $k
       detail.save
+      @texted.slice! /^\S+\s+/
       detail.recipe = @texted
       detail.save
       detail.source = "chatbot"
